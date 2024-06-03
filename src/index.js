@@ -7,7 +7,7 @@ const invoiceRoutes = require('./routes/invoiceRoutes'); // Update to use requir
 
 const app = express();
 const PORT = process.env.PORT || 5000;
-const MONGODB_URI = 'mongodb+srv://gummasrivathsa:<12345>@cluster0.7ftfrvk.mongodb.net/invoice-generator';
+const MONGODB_URI = 'mongodb+srv://gummasrivathsa:12345@cluster0.fblubjm.mongodb.net/invoice-generator';
 
 // Middleware
 app.use(cors());
