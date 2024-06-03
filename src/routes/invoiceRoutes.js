@@ -2,7 +2,7 @@ const express = require('express');
 const puppeteer = require('puppeteer');
 const User = require('../models/User');
 const Product = require('../models/Product');
-
+require("dotenv").config();
 const router = express.Router();
 
 // Route to generate PDF invoice
@@ -61,6 +61,7 @@ router.post('/generate-pdf', async (req, res) => {
 
     const browser = await puppeteer.launch({
       headless: true,
+      executablePath: process.env.NODE_ENV === "production"?process.env.PUPPETEER_EXECUTABLE_PATH:puppeteer.executablePath(),
       args: ['--no-sandbox', '--disable-setuid-sandbox']
     });
     const page = await browser.newPage();
