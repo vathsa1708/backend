@@ -6,5 +6,5 @@ ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true \
 WORKDIR /usr/src/
 COPY package*.json ./
 COPY . .
-CMD [ "node", "index.js"]
+CMD [ "node", "src/index.js"]
 
